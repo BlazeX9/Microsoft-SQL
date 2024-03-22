@@ -1,0 +1,29 @@
+Stored Functions (Performs operation on the given values and must return a value)
+
+Scalar Valued Function -> This function takes one or more parameters and returns a single value
+
+CREATE FUNCTION MySFunc(@EID INT) 
+RETURNS MONEY 
+AS 
+BEGIN 
+DECLARE @BASIC MONEY,@HRA MONEY,@DA MONEY,@GROSS MONEY 
+SELECT @BASIC=ESalary FROM Employee WHERE EID=@EID 
+SET @HRA=@BASIC*0.1 
+SET @DA=@BASIC*0.3 
+SET @GROSS=@BASIC+@HR+@DA 
+RETURN @GROSS 
+END
+
+SELECT dbo.MySFunc(1001)
+DROP MySFunc
+
+
+Table Valued Functions -> This function returns more than one value
+	
+CREATE FUNCTION MySFunc(@EDept VARCHAR(50)) 
+RETURNS TABLE 
+AS 
+RETURN (SELECT * FROM Employee WHERE EDepartment=@EDept)
+
+SELECT * FROM MySFunc('Monitoring')
+DROP MySFunc
