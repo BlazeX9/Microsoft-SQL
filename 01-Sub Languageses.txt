@@ -1,4 +1,4 @@
-DDL <-> Data Definition Language (CREATE,ALTER,RENAME,TRUNCATE,DROP)
+-> DDL --- Data Definition Language (CREATE,ALTER,RENAME,TRUNCATE,DROP)
 CREATE TABLE Employee (EID INT PRIMARY KEY,EName VARCHAR(MAX),EDept VARCHAR(MAX))
 SP_HELP Employee
 
@@ -13,7 +13,7 @@ TRUNCATE TABLE <TABLENAME>
 DROP TABLE <TABLENAME>
 
 
-DML <-> Data Manipulation Language (INSERT,UPDATE,DELETE)
+-> DML --- Data Manipulation Language (INSERT,UPDATE,DELETE)
 INSERT INTO Employee VALUES (EM003,'A',26),(EM007,'B',23)
 INSERT INTO Employee (EName,EID,EAge) VALUES ('A',EM003,26)
 
@@ -21,11 +21,11 @@ UPDATE Employee SET EName='AA',EAge=25 WHERE EID=EM003
 DELETE FROM Employee WHERE EID=EM003
 
 
-DQL <-> Data Query Language (SELECT)
+-> DQL --- Data Query Language (SELECT)
 SELECT * FROM <TABLENAME>
 
 
-TCL <-> Transaction Control Language (BEGIN,COMMIT,ROLLBACK,SAVEPOINT)
+-> TCL --- Transaction Control Language (BEGIN,COMMIT,ROLLBACK,SAVEPOINT)
 BEGIN TRANSACTION
 DELETE FROM Employee WHERE EID=EM003
 
@@ -45,4 +45,4 @@ BEGIN TRANSACTION
 ROLLBACK TRANSACTION SavePoint1
 
 
-DCL <-> Data Control Language (GRANT,REVOKE)
+-> DCL --- Data Control Language (GRANT,REVOKE)
