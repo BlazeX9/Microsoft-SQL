@@ -1,6 +1,4 @@
-Stored Functions (Performs operation on the given values and must return a value)
-
-Scalar Valued Function -> This function takes one or more parameters and returns a single value
+Scalar Valued Function <-> This function takes one or more parameters and returns a single value
 
 CREATE FUNCTION MySFunc(@EID INT) 
 RETURNS MONEY 
@@ -18,7 +16,7 @@ SELECT dbo.MySFunc(1001)
 DROP MySFunc
 
 
-Table Valued Functions -> This function returns more than one value
+Table Valued Functions <-> This function returns more than one value
 	
 CREATE FUNCTION MySFunc(@EDept VARCHAR(50)) 
 RETURNS TABLE 
