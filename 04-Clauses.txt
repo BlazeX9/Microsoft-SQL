@@ -1,0 +1,6 @@
+COUNT <-> 
+SELECT EDept,COUNT(*) AS TotalEmploye FROM Employee GROUP BY EDept
+
+
+HAVING <->
+SELECT EDept,COUNT(*) AS TotalEmploye FROM Employee GROUP BY EDept HAVING ESalary>='50000'
