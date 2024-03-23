@@ -1,0 +1,13 @@
+These are precompiled/one time compliled
+
+-> Without Parameters <-
+CREATE PROCEDURE MySP
+AS 
+BEGIN 
+SELECT * FROM Employee
+END
+
+EXECUTE MySP
+
+
+-> With Parameters <-
