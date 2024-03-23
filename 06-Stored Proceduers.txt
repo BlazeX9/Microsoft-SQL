@@ -1,6 +1,6 @@
 These are precompiled/one time compliled
 
--> Without Parameters <-
+-> Without parameters <-
 CREATE PROCEDURE MySP
 AS 
 BEGIN 
@@ -10,4 +10,4 @@ END
 EXECUTE MySP
 
 
--> With Parameters <-
+-> With parameters <-
