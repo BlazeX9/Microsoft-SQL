@@ -1,0 +1,18 @@
+IDENTITY() <-> Auto increments column value
+CREATE TABLE Employee (EID INT IDENTITY(1001,1))
+SET IDENTITY_INSERT Employee ON  <-> To manually insert value in IDENTITY column
+
+
+ROW_NUMBER() <-> Same row values are shown in different rank number
+SELECT EName,ESalary,ROW_NUMBER() OVER(ORDER BY ESalary DESC) AS Ranks FROM Employee
+SELECT EName,ESalary,ROW_NUMBER() OVER(PARTITION BY EDepartment ORDER BY ESalary DESC) AS Ranks FROM Employee
+
+
+RANK() <-> Same row values are shown in same rank but skips next rank number
+SELECT EName,ESalary,RANK() OVER(ORDER BY ESalary DESC) AS Ranks FROM Employee
+SELECT EName,ESalary,RANK() OVER(PARTITION BY EDepartment ORDER BY ESalary DESC) AS Ranks FROM Employee
+
+
+DENSE_RANK() <-> Overcomes issues of ROW_NUMBER and RANK
+SELECT EName,ESalary,DENSE_RANK() OVER(ORDER BY ESalary DESC) AS Ranks FROM Employee
+SELECT EName,ESalary,DENSE_RANK() OVER(PARTITION BY EDepartment ORDER BY ESalary DESC) AS Ranks FROM Employee
