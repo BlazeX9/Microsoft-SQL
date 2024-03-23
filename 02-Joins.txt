@@ -1,23 +1,19 @@
--Number of colums needs to be same on both select statement
--Order of the colums needs to be same
--Datatype of the colums needs to be same
+-> Number of colums needs to be same on both select statement
+-> Order of the colums needs to be same
+-> Datatype of the colums needs to be same
 
 
-UNION -> Unique values from selected tables
+UNION <-> Retruns unique values from the selected tables
 SELECT * FROM TABLE1 UNION SELECT * FROM TABLE2
 
-
-UNION ALL -> All values from selected tables
+UNION ALL <-> Retruns all values from the selected tables
 SELECT * FROM TABLE1 UNION ALL SELECT * FROM TABLE2
 
-
-INTERSECT -> Common values from selected tables
+INTERSECT <-> Retruns common values from the selected tables
 SELECT * FROM TABLE1 INTERSECT SELECT * FROM TABLE2
 
-
-EXCEPT -> Retruns all values from left side table which are not present in right side table
+EXCEPT <-> Retruns all values from left side table which are not present in right side table
 SELECT * FROM TABLE1 EXCEPT SELECT * FROM TABLE2
 
-
-Self Join -> Joining a table data by itself
+Self Join <-> Joining a table by itself
 SELECT E1.EID,E1.EName,E1.ESalary FROM Employee E1,Employee E2 WHERE E1.ESalary=E2.ESalary
