@@ -1,6 +1,7 @@
 These are precompiled/one time compliled
 
 -> Without parameters <-
+
 CREATE PROCEDURE MySP
 AS 
 BEGIN 
