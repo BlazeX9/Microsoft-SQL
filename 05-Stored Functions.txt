@@ -24,4 +24,4 @@ AS
 RETURN (SELECT * FROM Employee WHERE EDepartment=@EDept)
 
 SELECT * FROM MySFunc('Monitoring')
-DROP MySFunc
+DROP MySFunc 
