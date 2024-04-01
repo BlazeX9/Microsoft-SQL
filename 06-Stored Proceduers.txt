@@ -1,14 +1,11 @@
 These are precompiled/one time compliled
 
 -> Without parameters <-
-
-CREATE PROCEDURE MySP
-AS 
+CREATE PROCEDURE MyStoredProcedure AS 
 BEGIN 
 SELECT * FROM Employee
 END
 
-EXECUTE MySP
-
+EXECUTE MyStoredProcedure
 
 -> With parameters <-
