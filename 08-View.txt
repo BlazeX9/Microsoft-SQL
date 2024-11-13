@@ -8,7 +8,7 @@ Types of Indexing:-
 When not to use Indexes?
 ->- Every time a write is made to the database the indexes are unusable until they have updated. If the database is constantly receiving writes then the indexes will never be usable. This is why indexes are typically applied to databases in data warehouses that get new data updated on a scheduled basis and not production databases which might be receiving new writes all the time.
 
-===================================================================================================================================================================
+=================================================================================================================================================================
 
 Simple View ->- When view is created on a single table, Supports all DML Operations.
 	
