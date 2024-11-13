@@ -2,6 +2,8 @@ IDENTITY() ->- Auto increments column value
 CREATE TABLE Employee (EID INT IDENTITY(1001,1))
 SET IDENTITY_INSERT Employee ON  <-> To manually insert value in IDENTITY column
 
+===================================================================================================================================================================
+
 ROW_NUMBER() ->- Same row number values are shown in different ranks
 SELECT EName,ESalary,ROW_NUMBER() OVER(ORDER BY ESalary DESC) AS Ranks FROM Employee
 SELECT EName,ESalary,ROW_NUMBER() OVER(PARTITION BY EDepartment ORDER BY ESalary DESC) AS Ranks FROM Employee
@@ -14,26 +16,49 @@ DENSE_RANK() ->- Overcomes issues of ROW_NUMBER and RANK
 SELECT EName,ESalary,DENSE_RANK() OVER(ORDER BY ESalary DESC) AS Ranks FROM Employee
 SELECT EName,ESalary,DENSE_RANK() OVER(PARTITION BY EDepartment ORDER BY ESalary DESC) AS Ranks FROM Employee
 
+===================================================================================================================================================================
 
-
-GETDATE();  ->- Returns the current database system date and time
+GETDATE()        ->- Returns the current database system date and time
 YEAR(GETDATE());  ->- Returns the year
 MONTH(GETDATE()); ->- Returns the month
 DAY(GETDATE());   ->- Returns the day
 
-DATENAME(); ->- Returns as string
+DATENAME() ->- Returns as string
 DATENAME(YEAR,GETDATE());
 DATENAME(MONTH,GETDATE());
 DATENAME(DAY,GETDATE());
 
-DATEPART(); ->- Returns as integer
+DATEPART() ->- Returns as integer
 DATEPART(YEAR,GETDATE());
 DATEPART(MONTH,GETDATE());
 DATEPART(DAY,GETDATE());
 
-DATEADD();  ->- Adds time/date interval
+DATEADD() ->- Adds time/date interval
 DATEADD(YEAR,-1,GETDATE());
 DATEADD(HOUR,-12,GETDATE());
 
-DATEDIFF();  ->- Difference between two dates
+DATEDIFF() ->- Difference between two dates
 DATEDIFF(MONTH,'2024-01-01',GETDATE());
+
+===================================================================================================================================================================
+
+CHARINDEX() ->- Returns the position in a string
+SELECT CHARINDEX('t','Customer'); ->- 4
+
+SUBSTRING(String,Position,Length)
+SELECT SUBSTRING('SQLTutorial',2,3); ->- QLT
+
+LEFT() ->- Extracts characters from a string starting from left
+SELECT LEFT('SQLTutorial',3); ->- SQL
+
+RIGHT() ->- Extracts characters from a string starting from right
+SELECT RIGHT('SQLTutorial',3); ->- ial
+
+CONCAT()
+SELECT CONCAT('Google','.com'); ->- Google.com
+
+REPLACE()
+SELECT REPLACE('SQLTutorial','T','M'); ->- SQL MuMorial
+
+STR() ->- Returns a number as string
+SELECT STR(185);
