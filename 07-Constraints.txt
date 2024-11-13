@@ -1,11 +1,11 @@
--> UNIQUE -- Restrict dublicate values but allows null values <-
+UNIQUE ->-  Restrict dublicate values but allows null values <-
 CREATE TABLE Employee (EID INT UNIQUE,EName VARCHAR(MAX),EDept VARCHAR(MAX))
 
--> NOT NULL -- Restrict null values but allows dublicate values <-
+NOT NULL ->- Restrict null values but allows dublicate values <-
 CREATE TABLE Employee (EID INT NOT NULL,EName VARCHAR(MAX),EDept VARCHAR(MAX))
 
--> PRIMARY KEY -- Restrict dublicate and null values <-
+PRIMARY KEY ->- Restrict dublicate and null values <-
 CREATE TABLE Employee (EID INT PRIMARY KEY,EName VARCHAR(MAX),EDept VARCHAR(MAX))
 
--> CHECK -- Validate condition before value insertation <-
+CHECK ->- Validate condition before value insertation <-
 CREATE TABLE Employee (EID INT,EName VARCHAR(MAX),EDept VARCHAR(MAX) CHECK(EDept='Admin'))
