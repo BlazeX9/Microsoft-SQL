@@ -1,3 +1,15 @@
+Indexing makes columns faster to query by creating pointers to where data is stored within a database
+
+Types of Indexing:-
+1. Clustered indexes are the unique index per table that determines the physical order of data in a table. The clustered index will be automatically created when the primary key is defined. A table can have only one custered index.
+
+2. Non-clustered indexes stores references for a specific field from the main table, that hold pointers back to the original entries of the table. A table can have more than one non-clustered index. Non-clustered indexes point to memory addresses instead of storing data themselves. This makes them slower to query than clustered indexes but typically much faster than a non-indexed column.
+
+When not to use Indexes?
+->- Every time a write is made to the database the indexes are unusable until they have updated. If the database is constantly receiving writes then the indexes will never be usable. This is why indexes are typically applied to databases in data warehouses that get new data updated on a scheduled basis and not production databases which might be receiving new writes all the time.
+
+===================================================================================================================================================================
+
 Simple View ->- When view is created on a single table, Supports all DML Operations.
 	
 CREATE VIEW simple AS
@@ -13,9 +25,7 @@ FROM emp_details a JOIN emp_salary b ON a.empid=b.empid;
 	
 SELECT * FROM complex_noindex;
 
-
-Normal view creates a virtual table and gives no performance benifits, while executing complex queries data fetching takes long time.
-Materialized view sotres the data physically and gives performance benifits as data is precompiled, while executing complex queries data fetching is faster.
+Normal view creates a virtual table and gives no performance benifits, while executing complex queries data fetching takes long time. Materialized view sotres the data physically and gives performance benifits as data is precompiled, while executing complex queries data fetching is faster.
 
 CREATE VIEW MyView
 WITH SCHEMABINDING AS
@@ -24,7 +34,6 @@ FROM dbo.emp_details a JOIN dbo.emp_salary b ON a.empid=b.empid;
 	
 CREATE UNIQUE CLUSTERED INDEX MyIndex ON MyView(a.empid);
 SELECT * FROM MyIndex;
-	
-	
+
 CREATE NONCLUSTERED INDEX MyIndex ON complex_index(a.empname);
 SELECT * FROM MyIndex WITH(NOEXPAND)
