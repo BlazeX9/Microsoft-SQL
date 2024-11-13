@@ -18,7 +18,7 @@ SELECT EName,ESalary,DENSE_RANK() OVER(PARTITION BY EDepartment ORDER BY ESalary
 
 ===================================================================================================================================================================
 
-GETDATE()        ->- Returns the current database system date and time
+GETDATE()         ->- Returns the current database system date and time
 YEAR(GETDATE());  ->- Returns the year
 MONTH(GETDATE()); ->- Returns the month
 DAY(GETDATE());   ->- Returns the day
