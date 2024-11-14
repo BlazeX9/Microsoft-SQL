@@ -1,11 +1,21 @@
-These are precompiled/one time compliled
+1. Stored procedure is precomplied and executed only whenever it is called but stored function is complied and executed everytime it is called
+2. We can use transactions in stored procudure but can't use in stored function
+3. Stored function must return a value but in a stored procedure it is optional
+4. Stored function can be called from stored procedure but vice versa is not possible 
+5. DML(Insert/Update/Delete) operations are not possible in stored function, it only allows SELECT statememnt in it
+6. We can use function in SELECT, WHERE, HAVING clause and even with Joins which is not possible with stored procedure
+
 
 -> Without parameters <-
-CREATE PROCEDURE MyStoredProcedure AS 
+CREATE PROCEDURE MyProcedure AS 
 BEGIN 
 SELECT * FROM Employee
 END
 
-EXECUTE MyStoredProcedure
+EXECUTE MyProcedure;
 
 -> With parameters <-
+CREATE PROCEDURE MyProcedure @city varchar(255),@dept varchar(255) AS
+SELECT * FROM Employee WHERE city=@city AND dept=@dept
+
+EXECUTE MyProcedure @city='Kolkata',@dept='DBA';
