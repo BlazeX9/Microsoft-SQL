@@ -16,4 +16,4 @@ EXCEPT --- Retruns all values from left side table which are not present in righ
 SELECT * FROM TABLE1 EXCEPT SELECT * FROM TABLE2
 
 Self Join --- Joining a table by itself
-SELECT E1.EID,E1.EName,E1.ESalary FROM Employee E1,Employee E2 WHERE E1.ESalary=E2.ESalary
+SELECT a.EID,a.EName,a.ESalary FROM Employee a,Employee b WHERE a.ESalary=b.ESalary AND b.EName='';
