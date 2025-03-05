@@ -1,5 +1,5 @@
 Microsoft SQL Server is a platfrom dependent backend application which only works on windows
-Oravel SQL Server is a platfrom independent backend application
+Oracel SQL Server is a platfrom independent backend application
 
 
 -> SSMS --- Database Engine
