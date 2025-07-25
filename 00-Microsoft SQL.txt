@@ -25,3 +25,15 @@ Different types of JOIN
 
 What is a view? How is it different from a table?
 - A view is a virtual table based on SQL queries used to simplify data access and enhance security. Unlike tables views do not store data themselves.
+
+
+
+
+
+
+Sample Questions:
+1. Retrieve duplicate records from a table
+- SELECT ColumnName, COUNT(*) FROM Employees GROUP BY ColumnName HAVING COUNT(*) > 1
+
+2. Find the second highest salary from an Employee table
+- 
