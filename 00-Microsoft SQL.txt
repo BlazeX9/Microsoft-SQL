@@ -36,4 +36,4 @@ Sample Questions:
 - SELECT ColumnName, COUNT(*) FROM Employees GROUP BY ColumnName HAVING COUNT(*) > 1
 
 2. Find the second highest salary from an Employee table
-- 
+- SELECT EmpName, EmpSalary, DENSE_RANK() OVER(ORDER BY EmpSalary DESC) AS Ranks FROM Employee
