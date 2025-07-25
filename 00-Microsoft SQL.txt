@@ -28,9 +28,6 @@ What is a view? How is it different from a table?
 
 
 
-
-
-
 Sample Questions:
 1. Retrieve duplicate records from a table
 - SELECT ColumnName, COUNT(*) FROM Employees GROUP BY ColumnName HAVING COUNT(*) > 1
