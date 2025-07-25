@@ -1,8 +1,27 @@
-Microsoft SQL Server is a platfrom dependent backend application which only works on windows
-Oracel SQL Server is a platfrom independent backend application
+What is SQL?
+- SQL (Structured Query Language) is the standard language used to interact with relational databases—performing operations like querying, updating, and managing data
 
+Types of SQL commands
+- DDL (Data Definition Language): CREATE, ALTER, DROP
+  DML (Data Manipulation Language): SELECT, INSERT, UPDATE, DELETE
+  DCL (Data Control Language): GRANT, REVOKE
+  TCL (Transaction Control Language): COMMIT, ROLLBACK, SAVEPOINT
+  DQL (Data Query Language): SELECT
 
--> SSMS --- Database Engine
--> SSAS --- Analysis Services --- Datawarhousing, to show table format data into 3D graphical format
--> SSRS --- Reporting Services --- To export the data as a document Ex:Excel, PDF
--> SSIS --- Intrigration Services --- To convert one type database into another type database Ex:MsSQL server to Oracel
+Difference between DELETE, TRUNCATE and DROP
+- DELETE: Removes rows, can have a WHERE clause and is rollback-able
+  TRUNCATE: Deletes all rows in a table, faster than DELETE, cannot be rolled back
+  DROP: Removes the table structure from the database completely
+
+Primary Key? Foreign Key?
+- Primary Key: Uniquely identifies each row in a table; cannot be NULL or duplicated.
+  Foreign Key: Creates a link between two tables, referencing the primary key of another table to maintain referential integrity
+
+Different types of JOIN
+- INNER JOIN: Retrieves records with matching values in both tables
+  LEFT JOIN: All records from the left table and matched records from the right table
+  RIGHT JOIN: All records from the right table and matched records from the left
+  FULL JOIN: All records from both tables including unmatched rows
+
+What is a view? How is it different from a table?
+- A view is a virtual table based on SQL queries used to simplify data access and enhance security. Unlike tables views do not store data themselves.
