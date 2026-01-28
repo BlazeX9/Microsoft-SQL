@@ -56,7 +56,7 @@ WHERE EmpRank = 2
 WITH CTE AS (SELECT EmpName,EmpSalary,DENSE_RANK() OVER(ORDER BY EmpSalary DESC) AS Ranks FROM Employee)   
 SELECT EmpName,EmpSalary FROM CTE WHERE Ranks = 2
 ```
-<br><br>
+<br>
 
 ### View
 View is a virtual table created from the result of a SELECT query. It does not store data physically. Views help in enhance security and present data in a cleaner, customized format.
