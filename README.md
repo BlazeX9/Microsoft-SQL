@@ -23,12 +23,10 @@ Number of columns, order of the columns and datatype of the columns needs to be 
 - **Identifying duplicate data**: `SELECT Emp_Name,Emp_Department,COUNT(*) AS duplicate_count FROM Employee GROUP BY Emp_Name,Emp_Department HAVING COUNT(*) > 1`
 - **Deleting duplicate data**: `WITH CTE AS (SELECT *,ROW_NUMBER() OVER (PARTITION BY Emp_Name,Emp_Department ORDER BY Emp_ID) AS rn FROM employees)`
    `DELETE FROM employees WHERE Emp_ID IN (SELECT Emp_ID FROM CTE WHERE rn > 1)`
-- **Viewing only unique records**: `DISTINCT`
-<br>
-<br>
+- **Viewing only unique records**: `DISTINCT`<br><br><br>
 
 ### CTE
-Common Table Expression is a temporary result set in SQL
+Common Table Expression is a temporary result set in SQL<br><br><br>
 
 ### Functions
 - **ROW_NUMBER()**: Same ranking value is shown for dublicate row values. Ex: two people having same salary will have same rank<br>
@@ -37,9 +35,7 @@ Common Table Expression is a temporary result set in SQL
 - **DENSE_RANK()**: Overcomes the issues of ROW_NUMBER and RANK
 - **IDENTITY()**: Auto increments value<br>
   `CREATE TABLE Employee (Emp_ID INT IDENTITY(1001,1))`
-- **GETDATE()**: Returns the system current date and time
-<br>
-<br>
+- **GETDATE()**: Returns the system current date and time<br><br><br>
 
 ### Queries
 1. Finding the second highest salary person<br> 
@@ -52,8 +48,7 @@ WHERE Ranks = 2
 WITH CTE AS (SELECT EmpName,EmpSalary,DENSE_RANK() OVER (ORDER BY EmpSalary DESC) AS Ranks FROM Employee)   
 SELECT EmpName,EmpSalary FROM CTE WHERE Ranks = 2
 ```
-<br>
-<br>
+<br><br><br>
 
 ### View
 View is a virtual table created from the result of a SELECT query. It does not store data physically. Views help in enhance security and present data in a cleaner, customized format.
