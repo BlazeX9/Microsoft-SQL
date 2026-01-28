@@ -34,7 +34,6 @@ Number of columns, order of the columns and datatype of the columns needs to be 
 ### CTE
 Common Table Expression is a temporary result set in SQL
 <br>
-<br>
 
 ### Functions
 - **ROW_NUMBER()**: Same ranking value is shown for dublicate row values. Ex: two people having same salary will have same rank<br>
