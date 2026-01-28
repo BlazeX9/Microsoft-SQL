@@ -96,10 +96,10 @@ Stored procedures are precompiled collection of SQL statements bundled together 
 CREATE PROCEDURE GetCustomersByCountry AS
 @Country VARCHAR(50)
 BEGIN 
-SELECT CustomerName,ContactName FROM Customers WHERE Country = @Country;
+SELECT CustomerName,ContactName FROM Customers WHERE Country=@Country;
 END;
 
-EXECUTE GetCustomersByCountry @Country = 'Sri lanka';
+EXECUTE GetCustomersByCountry @Country='India';
 ```
 **Advantages of Stored Procedures**
 - Since stored procedures are precompiled they execute faster than running ad-hoc SQL queries.
@@ -109,7 +109,7 @@ EXECUTE GetCustomersByCountry @Country = 'Sri lanka';
 
 
 ### Stored Function
-A stored function is a set of SQL statements that perform some operation and return a single value.
+A stored function is a set of SQL statements that perform some operation and return a value.
 
 - **Scalar Valued Function**: This function takes one or more parameters and returns a single value
 ```
@@ -146,7 +146,7 @@ SELECT * FROM MyStoredFunc('Admin')
 ### Indexing
 Indexes are special database structures that speed up data retrieval by allowing quick access to records instead of scanning the entire table. They act like a lookup system and play an important role in improving query performance and database efficiency.
 
-**Clustered Index**: Sorts and stores data rows in the table based on the index key<br>
+**Clustered Index**: Sorts and stores data rows in the table, based on the index key<br>
 **Non-clustered Index**: Creates a separate structure from the data rows to store index keys and pointers
 
 ```
@@ -174,3 +174,9 @@ SQL Server Management Studio allows users to view the execution plan which detai
 3. Use INNER JOIN Instead of WHERE for Joins
 3. Use WHERE Instead of HAVING
 4. Use LIMIT
+
+
+
+### Cursor
+A cursor in SQL is a database object used to retrieve and manipulate data row by row, rather than fetching an entire result set at once.
+- **Explicit Cursor**: Explicit cursors are declared, opened and managed by the user. Explicit cursors are used when you need to retrieve and manipulate a larger result set, perform complex operations on the data or when you need to iterate through multiple rows.
