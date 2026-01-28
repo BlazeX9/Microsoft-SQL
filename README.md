@@ -81,7 +81,7 @@ DROP VIEW view_name
 ### Stored Procedures
 Stored procedures are precompiled collection of SQL statements bundled together to perform a specific task. These procedures are stored in the database and can be called upon by users, applications or other procedures. Stored procedures are essential for automating database tasks, improving efficiency and reducing redundancy.
 
-- **System Stored Procedures**<br>
+- **System Stored Procedures**:<br>
 	`sp_help` `sp_rename`
 - **User Defined**:
 ```
@@ -93,9 +93,37 @@ END;
 
 EXECUTE GetCustomersByCountry @Country = 'Sri lanka';
 ```
-
 **Advantages of Stored Procedures**
 - Since stored procedures are precompiled they execute faster than running ad-hoc SQL queries.
 - Stored procedures can be reused in multiple applications or different parts of an application. This reduces the need to rewrite queries repeatedly.
 - Instead of sending multiple individual queries to the database server stored procedures allow to execute multiple operations in one go, reducing network load.
-- Stored procedures simplify code maintenance. Changes made to the procedure are automatically reflected wherever the procedure is used.
+- Stored procedures simplify code maintenance. Changes made to the procedure are automatically reflected wherever the procedure is used.<br><br>
+
+
+### Stored function
+A stored function is a set of SQL statements that perform some operation and return a single value.
+
+- **Scalar Valued Function**: This function takes one or more parameters and returns a single value
+```
+CREATE FUNCTION MyStoredFunc(@EID INT) 
+RETURNS MONEY AS 
+BEGIN 
+DECLARE @BASIC MONEY,@HRA MONEY,@DA MONEY,@GROSS MONEY 
+SELECT @BASIC=ESalary FROM Employee WHERE EID=@EID 
+SET @HRA=@BASIC*0.1 
+SET @DA=@BASIC*0.1 
+SET @GROSS=@BASIC+@HR+@DA 
+RETURN @GROSS 
+END
+
+SELECT dbo.MyStoredProcedure(E1001)
+```
+
+- **Table Valued Functions**: This function returns more than one value
+```
+CREATE FUNCTION MyStoredFunc(@EDept VARCHAR(50)) 
+RETURNS TABLE AS 
+RETURN (SELECT * FROM Employee WHERE Department=@EDept)
+
+SELECT * FROM MyStoredFunc('Admin')
+```
