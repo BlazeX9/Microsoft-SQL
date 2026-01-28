@@ -24,4 +24,5 @@
 - **INTERSECT**: Returns only **common** rows from the selected tables.
 - **EXCEPT**: Returns all rows from left side table which are not present in right side table.
 
-To use above operators - number of columns, order of the columns and datatype of the columns needs to be same on both select statement.
+Number of columns, order of the columns and datatype of the columns needs to be same on both select statement when using above operators.<br>
+`SELECT column1,column2 FROM table1 UNION SELECT column1,column2 FROM table2`
