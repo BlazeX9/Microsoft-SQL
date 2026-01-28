@@ -53,3 +53,22 @@ WHERE Ranks = 2
 WITH CTE AS (SELECT EmpName,EmpSalary,DENSE_RANK() OVER (ORDER BY EmpSalary DESC) AS Ranks FROM Employee)   
 SELECT EmpName,EmpSalary FROM CTE WHERE Ranks = 2
 ```
+
+### View
+View is a virtual table created from the result of a SELECT query. It does not store data physically. Views help in enhance security and present data in a cleaner, customized format.
+
+- **Simple View**: When view is created on a single table, supports all DML Operations.
+```
+CREATE VIEW simpleView AS
+SELECT NAME, ADDRESS FROM employee;
+
+SELECT * FROM simpleView
+```
+- **Complex View**: When view is create on multiple tables, does not supports all DML operations.
+```
+CREATE VIEW complexView AS
+SELECT a.empid,a.empname,b.empsalary,b.empcity
+FROM emp_table_1 a JOIN emp_table_2 b ON a.empid=b.empid;
+	
+SELECT * FROM complexView
+```
