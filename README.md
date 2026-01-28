@@ -7,3 +7,9 @@
 
 - **Outer Join**: Outer Joins include rows that do not have a corresponding match in one or both of the tables.<br>
   `LEFT OUTER JOIN` `RIGHT OUTER JOIN` `FULL OUTER JOIN`
+
+
+### Duplicate Data
+- **Identifying duplicate data**: `SELECT column, COUNT(*) FROM table_name GROUP BY column HAVING COUNT(*) > 1`
+- **Viewing all duplicate data**: `SELECT *, COUNT(*) OVER (PARTITION BY column) AS duplicate_count FROM table_name`
+- **Deleting all dublicate data**: `WITH CTE AS (SELECT *,ROW_NUMBER() OVER (PARTITION BY column1,column2 ORDER BY column3) AS rn FROM employees)<br> DELETE FROM employees WHERE ID IN (SELECT ID FROM CTE WHERE rn > 1)`
