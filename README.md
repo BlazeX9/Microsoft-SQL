@@ -48,7 +48,5 @@ SELECT EmpName,EmpSalary
 FROM (SELECT EmpName,EmpSalary,DENSE_RANK() OVER (ORDER BY EmpSalary DESC) AS Ranks FROM Employee) t 
 WHERE Ranks = 2
 ```
-```
-WITH CTE AS (SELECT EmpName,EmpSalary,DENSE_RANK() OVER (ORDER BY EmpSalary DESC) AS Ranks FROM Employee) 
-SELECT EmpName,EmpSalary FROM CTE WHERE Ranks = 2
-```
+`WITH CTE AS (SELECT EmpName,EmpSalary,DENSE_RANK() OVER (ORDER BY EmpSalary DESC) AS Ranks FROM Employee)`   
+`SELECT EmpName,EmpSalary FROM CTE WHERE Ranks = 2`
