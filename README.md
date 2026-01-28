@@ -39,6 +39,6 @@ Number of columns, order of the columns and datatype of the columns needs to be 
 
 
 ### Queries
-- Finding the second highest salary person:<br> 
+1. Finding the second highest salary person<br> 
 `SELECT EmpName,EmpSalary FROM (SELECT EmpName,EmpSalary,DENSE_RANK() OVER (ORDER BY EmpSalary DESC) AS Ranks FROM Employee) t WHERE Ranks = 2`<br>
 `WITH CTE AS (SELECT EmpName,EmpSalary,DENSE_RANK() OVER (ORDER BY EmpSalary DESC) AS Ranks FROM Employee) SELECT EmpName,EmpSalary FROM CTE WHERE Ranks = 2`
