@@ -100,7 +100,7 @@ EXECUTE GetCustomersByCountry @Country = 'Sri lanka';
 - Stored procedures simplify code maintenance. Changes made to the procedure are automatically reflected wherever the procedure is used.<br><br>
 
 
-### Stored function
+### Stored Function
 A stored function is a set of SQL statements that perform some operation and return a single value.
 
 - **Scalar Valued Function**: This function takes one or more parameters and returns a single value
@@ -126,4 +126,30 @@ RETURNS TABLE AS
 RETURN (SELECT * FROM Employee WHERE Department=@EDept)
 
 SELECT * FROM MyStoredFunc('Admin')
+```
+
+### Stored Procedure vs Stored Function
+- Stored procedure is precomplied and executed only whenever it is called but stored function is complied and executed everytime it is called
+- Stored function must return a value but in a stored procedure it is optional
+- Stored function can be called from stored procedure but vice versa is not possible
+- DML(Insert/Update/Delete) operations are not possible in stored function, it only allows SELECT statememnt in it
+
+
+### Indexing
+Indexes are special database structures that speed up data retrieval by allowing quick access to records instead of scanning the entire table. They act like a lookup system and play an important role in improving query performance and database efficiency.
+
+```
+CREATE INDEX idx_product ON Sales (product_id)
+```
+```
+CREATE UNIQUE INDEX idx_unique_employee ON Sales (customer_id)
+```
+
+**Viewing Indexes**
+```
+SHOW INDEXES FROM table_name
+```
+**Removing an Index**
+```
+DROP INDEX index_name
 ```
