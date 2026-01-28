@@ -43,7 +43,7 @@ Common Table Expression is a temporary result set in SQL<br><br>
 - **DENSE_RANK()**: Overcomes the issues of ROW_NUMBER and RANK
 - **IDENTITY()**: Auto increments value<br>
   `CREATE TABLE Employee (Emp_ID INT IDENTITY(1001,1))`
-- **GETDATE()**: Returns the system current date and time<br><br><br>
+- **GETDATE()**: Returns the system current date and time<br><br>
 
 ### Queries
 1. Finding the second highest salary person<br> 
