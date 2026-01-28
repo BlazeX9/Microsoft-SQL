@@ -1,4 +1,4 @@
-## SQL Joining
+SQL Joining
 - Self Join:
 
 - Cross Join:
