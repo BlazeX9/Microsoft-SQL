@@ -28,6 +28,10 @@ Number of columns, order of the columns and datatype of the columns needs to be 
 - **Viewing only unique records**: `DISTINCT`
 
 
+### CTE
+Common Table Expression is a temporary result set in SQL
+
+
 ### Functions
 - **ROW_NUMBER()**: Same ranking value is shown for dublicate row values. Ex: two people having same salary will have same rank<br>
   `SELECT Emp_Name,Emp_Salary,ROW_NUMBER() OVER(PARTITION BY Emp_Department ORDER BY Emp_Salary DESC) AS Rank FROM Employee`
@@ -41,4 +45,5 @@ Number of columns, order of the columns and datatype of the columns needs to be 
 ### Queries
 1. Finding the second highest salary person<br> 
 `SELECT EmpName,EmpSalary FROM (SELECT EmpName,EmpSalary,DENSE_RANK() OVER (ORDER BY EmpSalary DESC) AS Ranks FROM Employee) t WHERE Ranks = 2`<br>
-`WITH CTE AS (SELECT EmpName,EmpSalary,DENSE_RANK() OVER (ORDER BY EmpSalary DESC) AS Ranks FROM Employee) SELECT EmpName,EmpSalary FROM CTE WHERE Ranks = 2`
+```WITH CTE AS (SELECT EmpName,EmpSalary,DENSE_RANK() OVER (ORDER BY EmpSalary DESC) AS Ranks FROM Employee) 
+SELECT EmpName,EmpSalary FROM CTE WHERE Ranks = 2```
