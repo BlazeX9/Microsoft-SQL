@@ -76,3 +76,26 @@ SHOW FULL TABLES WHERE table_type LIKE "%VIEW"
 ```
 DROP VIEW view_name
 ```
+<br><br>
+
+### Stored Procedures
+Stored procedures are precompiled collection of SQL statements bundled together to perform a specific task. These procedures are stored in the database and can be called upon by users, applications or other procedures. Stored procedures are essential for automating database tasks, improving efficiency and reducing redundancy.
+
+- **System Stored Procedures**
+	`sp_help` `sp_rename`
+- **User Defined**:
+```
+CREATE PROCEDURE GetCustomersByCountry AS
+@Country VARCHAR(50)
+BEGIN 
+SELECT CustomerName,ContactName FROM Customers WHERE Country = @Country;
+END;
+
+EXECUTE GetCustomersByCountry @Country = 'Sri lanka';
+```
+
+**Advantages of Stored Procedures**
+- Since stored procedures are precompiled they execute faster than running ad-hoc SQL queries.
+- Stored procedures can be reused in multiple applications or different parts of an application. This reduces the need to rewrite queries repeatedly.
+- Instead of sending multiple individual queries to the database server stored procedures allow to execute multiple operations in one go, reducing network load.
+- Stored procedures simplify code maintenance. Changes made to the procedure are automatically reflected wherever the procedure is used.
