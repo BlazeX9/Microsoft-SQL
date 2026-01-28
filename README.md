@@ -153,3 +153,13 @@ SHOW INDEXES FROM table_name
 ```
 DROP INDEX index_name
 ```
+
+
+### Performance Tuning
+SQL Server Management Studio allows users to view the execution plan which details how SQL Server processes a query. This plan helps identify inefficiencies like missing indexes or unnecessary table scans.
+
+1. Avoide SELECT *
+2. Avoid SELECT DISTINCT
+3. Use INNER JOIN Instead of WHERE for Joins
+3. Use WHERE Instead of HAVING
+4. Use LIMIT
