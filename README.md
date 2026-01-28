@@ -164,7 +164,7 @@ SHOW INDEXES FROM table_name
 ```
 DROP INDEX index_name
 ```
-
+<br>
 
 ### Performance Tuning
 SQL Server Management Studio allows users to view the execution plan which details how SQL Server processes a query. This plan helps identify inefficiencies like missing indexes or unnecessary table scans.
@@ -173,9 +173,7 @@ SQL Server Management Studio allows users to view the execution plan which detai
 2. Avoid SELECT DISTINCT
 3. Use INNER JOIN Instead of WHERE for Joins
 3. Use WHERE Instead of HAVING
-4. Use LIMIT
-
-
+4. Use LIMIT <br><br>
 
 ### Cursor
 A cursor in SQL is a database object used to retrieve and manipulate data row by row, rather than fetching an entire result set at once.
