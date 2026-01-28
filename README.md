@@ -138,6 +138,8 @@ SELECT * FROM MyStoredFunc('Admin')
 ### Indexing
 Indexes are special database structures that speed up data retrieval by allowing quick access to records instead of scanning the entire table. They act like a lookup system and play an important role in improving query performance and database efficiency.
 
+**Clustered Index**: Sorts and stores data rows in the table based on the index key
+**Non-clustered Index**: Creates a separate structure from the data rows to store index keys and pointers
 ```
 CREATE INDEX idx_product ON Sales (product_id)
 ```
