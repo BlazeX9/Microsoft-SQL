@@ -26,7 +26,15 @@ Number of columns, order of the columns and datatype of the columns needs to be 
 - **Viewing only unique records**: `DISTINCT`<br><br><br>
 
 ### CTE
-Common Table Expression is a temporary result set in SQL<br><br><br>
+Common Table Expression is a temporary result set in SQL<br><br>
+
+### Pattern Matching | LIKE Operator
+- 'a%' - Match strings that start with 'a'
+- '%a' - Match strings with end with 'a'
+- 'a%t' - Match strings that contain the start with 'a' and end with 't'
+- '%wow%' - Match strings that contain the substring 'wow' in them at any position
+- '_a%' - Match strings that contain 'a' at the second position
+- 'a_ _%' - Match strings that start with 'a and contain at least 2 more characters
 
 ### Functions
 - **ROW_NUMBER()**: Same ranking value is shown for dublicate row values. Ex: two people having same salary will have same rank<br>
