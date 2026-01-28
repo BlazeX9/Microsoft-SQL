@@ -1,3 +1,13 @@
+### Data Merging
+- **UNION**: Returns only **unique** rows from the selected tables.
+- **UNION ALL**: Returns **all** rows from the selected tables.
+- **INTERSECT**: Returns only **common** rows from the selected tables.
+- **EXCEPT**: Returns all rows from left side table which are not present in right side table.
+
+Number of columns, order of the columns and datatype of the columns needs to be same on both select statement when using above operators.<br>
+`SELECT column1,column2 FROM table1 UNION SELECT column1,column2 FROM table2`
+
+
 ### SQL Joining
 - **Self Join**: It's used when a table needs to be joined with itself to compare rows within the same table.<br>
   `SELECT a.Emp_ID,a.Emp_Name,a.Emp_Salary FROM Employee a JOIN Employee b ON a.Emp_Salary=b.Emp_Salary`
@@ -18,11 +28,4 @@
 - **Viewing only unique records**: `DISTINCT`
 
 
-### Data Merging
-- **UNION**: Returns only **unique** rows from the selected tables.
-- **UNION ALL**: Returns **all** rows from the selected tables.
-- **INTERSECT**: Returns only **common** rows from the selected tables.
-- **EXCEPT**: Returns all rows from left side table which are not present in right side table.
-
-Number of columns, order of the columns and datatype of the columns needs to be same on both select statement when using above operators.<br>
-`SELECT column1,column2 FROM table1 UNION SELECT column1,column2 FROM table2`
+### 
