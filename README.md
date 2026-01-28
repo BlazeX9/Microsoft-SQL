@@ -36,3 +36,9 @@ Number of columns, order of the columns and datatype of the columns needs to be 
 - **IDENTITY()**: Auto increments value<br>
   `CREATE TABLE Employee (Emp_ID INT IDENTITY(1001,1))`
 - **GETDATE()**: Returns the system current date and time
+
+
+### Queries
+- Finding the second highest salary person:<br> 
+`SELECT EmpName,EmpSalary FROM (SELECT EmpName,EmpSalary,DENSE_RANK() OVER (ORDER BY EmpSalary DESC) AS Ranks FROM Employee) t WHERE Ranks = 2`<br>
+`WITH CTE AS (SELECT EmpName,EmpSalary,DENSE_RANK() OVER (ORDER BY EmpSalary DESC) AS Ranks FROM Employee) SELECT EmpName,EmpSalary FROM CTE WHERE Ranks = 2`
