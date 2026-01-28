@@ -5,7 +5,7 @@
 - **EXCEPT**: Returns all rows from left side table which are not present in right side table.
 
 Number of columns, order of the columns and datatype of the columns needs to be same on both select statement when using above operators.
-`SELECT column1,column2 FROM table1 UNION SELECT column1,column2 FROM table2`<br><br><br>
+`SELECT column1,column2 FROM table1 UNION SELECT column1,column2 FROM table2`<br><br>
 
 ### SQL Joining
 - **Self Join**: It's used when a table needs to be joined with itself to compare rows within the same table.<br>
@@ -17,7 +17,7 @@ Number of columns, order of the columns and datatype of the columns needs to be 
   `SELECT columns FROM table1 INNER JOIN table2 ON table1.column_name = table2.column_name`
 
 - **Outer Join**: Outer Joins include rows that do not have a corresponding match in one or both of the tables.<br>
-  `LEFT OUTER JOIN` `RIGHT OUTER JOIN` `FULL OUTER JOIN`<br><br><br>
+  `LEFT OUTER JOIN` `RIGHT OUTER JOIN` `FULL OUTER JOIN`<br><br>
 
 ### Duplicate Data Handeling
 - **Identifying duplicate data**: `SELECT Emp_Name,Emp_Department,COUNT(*) AS duplicate_count FROM Employee GROUP BY Emp_Name,Emp_Department HAVING COUNT(*) > 1`
