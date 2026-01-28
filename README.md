@@ -5,9 +5,7 @@
 - **EXCEPT**: Returns all rows from left side table which are not present in right side table.
 
 Number of columns, order of the columns and datatype of the columns needs to be same on both select statement when using above operators.<br>
-`SELECT column1,column2 FROM table1 UNION SELECT column1,column2 FROM table2`
-<br>
-<br>
+`SELECT column1,column2 FROM table1 UNION SELECT column1,column2 FROM table2`<br><br><br>
 
 ### SQL Joining
 - **Self Join**: It's used when a table needs to be joined with itself to compare rows within the same table.<br>
