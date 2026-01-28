@@ -19,8 +19,9 @@
 
 
 ### Data Merging
-- **UNION**: returns only **unique** rows from the selected tables.
+- **UNION**: Returns only **unique** rows from the selected tables.
 - **UNION ALL**: Returns **all** rows from the selected tables.
 - **INTERSECT**: Returns only **common** rows from the selected tables.
 - **EXCEPT**: Returns all rows from left side table which are not present in right side table.
 
+To use above operators - number of columns, order of the columns and datatype of the columns needs to be same on both select statement.
