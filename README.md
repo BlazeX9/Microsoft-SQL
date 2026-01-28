@@ -28,4 +28,11 @@ Number of columns, order of the columns and datatype of the columns needs to be 
 - **Viewing only unique records**: `DISTINCT`
 
 
-### 
+### Functions
+- **ROW_NUMBER()**: Same ranking value is shown for dublicate row values. Ex: two people having same salary will have same rank<br>
+  `SELECT Emp_Name,Emp_Salary,ROW_NUMBER() OVER(PARTITION BY Emp_Department ORDER BY Emp_Salary DESC) AS Rank FROM Employee`
+- **RANK()**: Same ranking value is shown for dublicate row values and skips next rank
+- **DENSE_RANK()**: Overcomes the issues of ROW_NUMBER and RANK
+- **IDENTITY()**: Auto increments value<br>
+  `CREATE TABLE Employee (Emp_ID INT IDENTITY(1001,1))`
+- **GETDATE()**: Returns the system current date and time
