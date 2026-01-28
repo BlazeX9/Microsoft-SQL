@@ -11,7 +11,7 @@
   `LEFT OUTER JOIN` `RIGHT OUTER JOIN` `FULL OUTER JOIN`
 
 
-### Duplicate Data
+### Duplicate Data Handeling
 - **Identifying duplicate data**: `SELECT Emp_Name,Emp_Department,COUNT(*) AS duplicate_count FROM Employee GROUP BY Emp_Name,Emp_Department HAVING COUNT(*) > 1`
 - **Viewing duplicate data**: `SELECT *, COUNT(*) OVER (PARTITION BY Emp_Name,Emp_Department) AS duplicate_count FROM Employee`
 - **Deleting duplicate data**: `WITH CTE AS (SELECT *,ROW_NUMBER() OVER (PARTITION BY Emp_Name,Emp_Department ORDER BY Emp_ID) AS rn FROM employees) DELETE FROM employees WHERE Emp_ID IN (SELECT Emp_ID FROM CTE WHERE rn > 1)`
