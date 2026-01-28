@@ -54,6 +54,8 @@ WITH CTE AS (SELECT EmpName,EmpSalary,DENSE_RANK() OVER (ORDER BY EmpSalary DESC
 SELECT EmpName,EmpSalary FROM CTE WHERE Ranks = 2
 ```
 
+
+
 ### View
 View is a virtual table created from the result of a SELECT query. It does not store data physically. Views help in enhance security and present data in a cleaner, customized format.
 
@@ -71,4 +73,12 @@ SELECT a.empid,a.empname,b.empsalary,b.empcity
 FROM emp_table_1 a JOIN emp_table_2 b ON a.empid=b.empid;
 	
 SELECT * FROM complexView
+```
+- **Listing all Views in a Database**: 
+```
+SHOW FULL TABLES WHERE table_type LIKE "%VIEW"
+```
+- **Deleting a View**:
+```
+DROP VIEW view_name
 ```
