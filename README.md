@@ -76,12 +76,12 @@ SHOW FULL TABLES WHERE table_type LIKE "%VIEW"
 ```
 DROP VIEW view_name
 ```
-<br><br>
+<br>
 
 ### Stored Procedures
 Stored procedures are precompiled collection of SQL statements bundled together to perform a specific task. These procedures are stored in the database and can be called upon by users, applications or other procedures. Stored procedures are essential for automating database tasks, improving efficiency and reducing redundancy.
 
-- **System Stored Procedures**
+- **System Stored Procedures**<br>
 	`sp_help` `sp_rename`
 - **User Defined**:
 ```
